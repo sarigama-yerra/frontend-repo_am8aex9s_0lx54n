@@ -1,26 +1,32 @@
-import { useState } from 'react'
+import { Routes, Route } from 'react-router-dom'
+import Header from './components/Header'
+import Footer from './components/Footer'
+import Home from './pages/Home'
+import Coreosofia from './pages/Coreosofia'
+import DanzaCurativa from './pages/DanzaCurativa'
+import Online from './pages/Online'
+import InPresenza from './pages/InPresenza'
+import Ritiri from './pages/Ritiri'
+import Testimonianze from './pages/Testimonianze'
+import Contatti from './pages/Contatti'
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <div className="min-h-screen bg-gradient-to-br from-purple-50 to-blue-50 flex items-center justify-center">
-      <div className="bg-white p-8 rounded-lg shadow-lg">
-        <h1 className="text-3xl font-bold text-gray-800 mb-4">
-          Vibe Coding Platform
-        </h1>
-        <p className="text-gray-600 mb-6">
-          Your AI-powered development environment
-        </p>
-        <div className="text-center">
-          <button
-            onClick={() => setCount(count + 1)}
-            className="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded"
-          >
-            Count is {count}
-          </button>
-        </div>
-      </div>
+    <div className="min-h-screen bg-[radial-gradient(ellipse_at_top_left,rgba(255,240,245,0.6),rgba(224,242,254,0.4))] text-rose-900">
+      <Header />
+      <main>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/coreosofia" element={<Coreosofia />} />
+          <Route path="/danzacurativa" element={<DanzaCurativa />} />
+          <Route path="/online" element={<Online />} />
+          <Route path="/in-presenza" element={<InPresenza />} />
+          <Route path="/ritiri" element={<Ritiri />} />
+          <Route path="/testimonianze" element={<Testimonianze />} />
+          <Route path="/contatti" element={<Contatti />} />
+        </Routes>
+      </main>
+      <Footer />
     </div>
   )
 }
